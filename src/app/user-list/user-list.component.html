@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="main-body">
+
+
+
+        <div class="title">
+            <h3 class="title_users">Users</h3>
+            <div class="form_control">
+                <form>
+                    <select class="custom-select col-sm-2" id="inlineFormCustomSelect" (change)='onOptionsSelectedSort($event)'>
+                        <option selected>Select One</option>
+                        <option value="none">None</option>
+                        <option value="first_name">First Name</option>
+                        <option value="last_name">Last Name</option>
+                      </select>
+                </form>
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-12 col-md-4 mb-3" *ngFor="let user of user_data" (click)="user_details(user.id)">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="{{user.avatar}}" style="width:100px;margin-top:15px;background: springgreen;"
+                                alt="User" class="img-fluid img-thumbnail rounded-circle border-0 mb-3">
+                            <h5 class="card-title" [innerHtml]="user.first_name+' '+user.last_name"></h5>
+                            <p class="text-secondary mb-1">E-mail: {{user.email}}</p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success btn-rounded btn-block btn-sm" type="button">Show
+                                profile</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-clip-rotate-multiple"
+    [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>

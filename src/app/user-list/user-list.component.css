@@ -1,0 +1,13 @@
+.card-footer {
+    text-align: center;
+}
+.text-center {
+    background: #83dddd40;
+}
+.title_users{
+    text-align: center;
+}
+.form_control{
+    text-align:right;
+    margin-bottom: 20px;
+}
